@@ -1,0 +1,146 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "spacing": 0,
+
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "custom/media",
+        "pulseaudio",
+        "backlight",
+        "network",
+        "cpu",
+        "temperature",
+        "custom/tlp",
+        "battery",
+        "tray",
+        "custom/power"
+    ],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+
+    "sway/mode": {
+        "format": " {}"
+    },
+
+    "clock": {
+        "format": "󰥔 {:%H:%M}",
+        "format-alt": "󰥔 {:%a %d %b %Y}",
+        "tooltip-format": "<tt>{calendar}</tt>"
+    },
+
+    "cpu": {
+        "interval": 2,
+        "format": " {usage}%",
+        "tooltip": false
+    },
+
+    "temperature": {
+        "thermal-zone": 0,
+        "critical-threshold": 80,
+        "interval": 2,
+	"tooltip": false
+    },
+
+    "custom/tlp": {
+        "exec": "if command -v tlp-stat >/dev/null; then gov=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor); if [ \"$gov\" = \"powersave\" ]; then echo '󰌪 powersave'; else echo '󱐋 performance'; fi; fi",
+        "interval": 5,
+        "tooltip": false
+    },
+
+    "network": {
+        "format-wifi": "{icon} {essid} {signalStrength}%",
+        "format-ethernet": "󰖟 {ipaddr}",
+        "format-disconnected": "󰤭 offline",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "tooltip-format": "{ifname}\n{ipaddr}\nGateway: {gwaddr}\n{signalStrength}% ↑ {bandwidthUpBits} ↓ {bandwidthDownBits}"
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "󰝚 {volume}%",
+        "format-muted": "󰖁 muted",
+        "format-icons": {
+            "headphone": "󰋋",
+            "headset": "󰋎",
+            "default": [
+                "󰕼",
+                "󰕽",
+                "󰕾"
+            ]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+        "tooltip": false
+    },
+
+    "backlight": {
+        "format": "󰃟 {percent}%",
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "tooltip": false
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
+        "format-icons": [
+            "󰁺",
+            "󰁼",
+            "󰁿",
+            "󰂂",
+            "󰁹"
+        ],
+        "tooltip-format": "{timeTo}\nHealth: {health}%"
+    },
+
+    "tray": {
+        "spacing": 8,
+        "icon-size": 14
+    },
+
+    "custom/media": {
+        "format": " {}",
+        "return-type": "json",
+        "max-length": 30,
+        "escape": true,
+        "exec": "~/.config/waybar/mediaplayer.py 2>/dev/null"
+    },
+
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "systemctl poweroff",
+            "reboot": "systemctl reboot",
+            "suspend": "systemctl suspend"
+        }
+    }
+}

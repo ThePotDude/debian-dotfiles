@@ -1,0 +1,160 @@
+@import "macchiato.css";
+ 
+* {
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", monospace;
+    font-size: 13px;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+ 
+window#waybar {
+    background-color: @crust;
+    color: @text;
+    border-bottom: 2px solid @surface0;
+}
+ 
+/* Workspaces */
+#workspaces {
+    margin: 0 6px;
+}
+ 
+#workspaces button {
+    padding: 0 10px;
+    color: @overlay0;
+    background: transparent;
+    font-size: 13px;
+}
+ 
+#workspaces button:hover {
+    background: @surface0;
+    color: @text;
+}
+ 
+#workspaces button.focused,
+#workspaces button.active {
+    color: @mauve;
+    background: @surface0;
+    border-bottom: 2px solid @mauve;
+}
+ 
+#workspaces button.urgent {
+    color: @red;
+    background: @surface0;
+}
+ 
+/* Mode */
+#mode {
+    padding: 0 10px;
+    color: @peach;
+    background: @surface0;
+    border-bottom: 2px solid @peach;
+}
+ 
+/* Base for all right modules */
+#clock,
+#cpu,
+#temperature,
+#network,
+#pulseaudio,
+#backlight,
+#battery,
+#tray,
+#custom-power,
+#custom-media,
+#custom-tlp {
+    padding: 0 10px;
+    color: @text;
+    background: transparent;
+}
+ 
+/* Individual module colors */
+#clock         { color: @lavender; }
+#cpu           { color: @blue; }
+#temperature   { color: @peach; }
+#temperature.critical { color: @red; background: @surface0; }
+#network       { color: @teal; }
+#network.disconnected { color: @red; }
+#pulseaudio    { color: @green; }
+#pulseaudio.muted { color: @overlay0; }
+#backlight     { color: @yellow; }
+#custom-tlp    { color: @mauve; }
+#custom-media  { color: @teal; }
+ 
+/* Battery states */
+#battery { color: @green; }
+#battery.warning  { color: @yellow; }
+#battery.critical { color: @red; }
+#battery.charging { color: @green; }
+#battery.plugged  { color: @teal; }
+ 
+/* Tray */
+#tray {
+    padding: 0 8px;
+}
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    color: @red;
+}
+ 
+/* Power button */
+#custom-power {
+    color: @red;
+    padding: 0 16px 0 10px;
+    font-size: 14px;
+}
+#custom-power:hover {
+    background: @surface0;
+}
+ 
+/* Separator borders between right modules */
+#cpu,
+#temperature,
+#network,
+#pulseaudio,
+#backlight,
+#battery,
+#custom-tlp,
+#tray,
+#custom-power {
+    border-left: 1px solid @surface0;
+}
+ 
+/* Subtle hover on all modules */
+#cpu:hover,
+#temperature:hover,
+#network:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#battery:hover,
+#custom-tlp:hover,
+#clock:hover {
+    background: @surface0;
+}
+ 
+/* Power menu popup */
+menu {
+    background-color: @crust;
+    border: 1px solid @surface0;
+    border-radius: 6px;
+    padding: 4px 0;
+    margin-top: 4px;
+    color: @text;
+}
+ 
+menuitem {
+    padding: 6px 16px;
+    color: @text;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+}
+ 
+menuitem:hover {
+    background-color: @surface0;
+    color: @mauve;
+}
