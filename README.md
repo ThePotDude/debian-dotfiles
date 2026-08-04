@@ -1,6 +1,6 @@
 # debian-dotfiles
 
-Personal collection of configuration files for a Sway desktop on Debian. Catppuccin Mauve themed.
+Personal collection of configuration files for a Sway desktop on Debian. Catppuccin-inspired rice.
 
 ## Contents
 
@@ -47,7 +47,7 @@ if you want to use it.
 
 ## Applying tlp.conf manually
 
-TLP configuration lives in `/etc/tlp.conf` and requires root privileges. Review the file
+Heavily personal and opinionated configuration, tuned exactly for my hardware. TLP configuration lives in `/etc/tlp.conf` and requires root privileges. Review the file
 first, then copy it manually:
 
 ```
