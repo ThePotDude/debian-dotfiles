@@ -50,4 +50,4 @@ done
 
 echo ""
 echo "Done."
-echo "Note: tlp.conf was not installed. It requires manual setup with root, just paste it yourself to /etc/."
+echo "Note: tlp.conf was not installed. It requires manual setup with root, just paste it yourself in /etc/."
