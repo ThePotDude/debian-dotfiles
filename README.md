@@ -63,4 +63,4 @@ location as the original file.
 
 ## License
 
-No license has been set yet. All rights reserved by default until one is added.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
