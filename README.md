@@ -1,6 +1,6 @@
 # debian-dotfiles
 
-Personal collection of configuration files for a Sway desktop on Debian. Catppuccin-inspired rice.
+Personal collection of configuration files for a Sway desktop Catppuccin-inspired rice on Debian, or for any other imperative distro.
 
 ## Contents
 
@@ -21,8 +21,10 @@ These configs assume the following are already installed:
 - sway
 - waybar
 - wofi
+- swaybg (paste your preferred wallpaper in ~/Pictures/)
 - alacritty
 - tlp (only needed if you plan to use tlp.conf)
+- smartmontools (optional if using tlp)
 
 ## Installation
 
