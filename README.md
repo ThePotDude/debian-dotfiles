@@ -1,6 +1,6 @@
 # debian-dotfiles
 
-Personal collection of configuration files for a Sway desktop on Debian.
+Personal collection of configuration files for a Sway desktop on Debian. Catppuccin Mauve themed.
 
 ## Contents
 
