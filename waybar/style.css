@@ -1,59 +1,65 @@
-@import "macchiato.css";
- 
+@import "mcmojave.css";
+
 * {
-    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", monospace;
-    font-size: 13px;
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font";
+    font-size: 13.5px;
+    font-weight: 500;
     min-height: 0;
     border: none;
     border-radius: 0;
     padding: 0;
     margin: 0;
+    transition: none;
 }
  
 window#waybar {
-    background-color: @crust;
-    color: @text;
-    border-bottom: 2px solid @surface0;
+    background-color: alpha(@crust, 1);
+    color: @bright_text;
+    border-bottom: 2px solid alpha(@surface0, 1);
 }
- 
-/* Workspaces */
+
+
 #workspaces {
-    margin: 0 6px;
+    margin: 0 8px;
+   padding: 0;
 }
- 
+
 #workspaces button {
     padding: 0 10px;
     color: @overlay0;
     background: transparent;
     font-size: 13px;
+    font-weight: 600;
+
 }
- 
+
 #workspaces button:hover {
     background: @surface0;
     color: @text;
 }
- 
+
 #workspaces button.focused,
 #workspaces button.active {
-    color: @mauve;
+    color: @accent;
     background: @surface0;
-    border-bottom: 2px solid @mauve;
+    box-shadow: inset 0 -2px 0 @accent;
 }
- 
+
 #workspaces button.urgent {
     color: @red;
     background: @surface0;
 }
- 
-/* Mode */
+
 #mode {
-    padding: 0 10px;
-    color: @peach;
-    background: @surface0;
-    border-bottom: 2px solid @peach;
+    padding: 0 12px;
+    margin: 3px 6px;
+    color: @bright_text;
+    background: @accent;
+    border-radius: 5px;
+    font-weight: 600;
 }
- 
-/* Base for all right modules */
+
+
 #clock,
 #cpu,
 #temperature,
@@ -62,57 +68,72 @@ window#waybar {
 #backlight,
 #battery,
 #tray,
-#custom-power,
 #custom-media,
 #custom-tlp {
-    padding: 0 10px;
-    color: @text;
+    padding: 0 11px;
+    color: @bright_text;
     background: transparent;
+    font-weight: 500;
 }
- 
-/* Individual module colors */
-#clock         { color: @lavender; }
-#cpu           { color: @blue; }
-#temperature   { color: @peach; }
-#temperature.critical { color: @red; background: @surface0; }
-#network       { color: @teal; }
-#network.disconnected { color: @red; }
-#pulseaudio    { color: @green; }
-#pulseaudio.muted { color: @overlay0; }
-#backlight     { color: @yellow; }
-#custom-tlp    { color: @mauve; }
-#custom-media  { color: @teal; }
- 
-/* Battery states */
-#battery { color: @green; }
-#battery.warning  { color: @yellow; }
-#battery.critical { color: @red; }
-#battery.charging { color: @green; }
-#battery.plugged  { color: @teal; }
- 
-/* Tray */
-#tray {
-    padding: 0 8px;
+
+
+#clock {
+    font-weight: 600;
+    padding: 0 14px 0 11px;
 }
+
+#battery {
+    margin-right: 8px;
+}
+
+#temperature.critical {
+    color: @red;
+    background: @surface0;
+}
+
+#network.disconnected {
+    color: @overlay0;
+}
+
+#pulseaudio.muted {
+    color: @overlay0;
+}
+
+#battery.warning {
+    color: @yellow;
+}
+
+#battery.critical {
+    color: @red;
+}
+
+#battery.charging {
+    color: @green;
+}
+
 #tray > .passive {
     -gtk-icon-effect: dim;
 }
+
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     color: @red;
 }
+
+#tray {
+    padding: 0 10px;
+}
  
-/* Power button */
-#custom-power {
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+ 
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
     color: @red;
-    padding: 0 16px 0 10px;
-    font-size: 14px;
 }
-#custom-power:hover {
-    background: @surface0;
-}
- 
-/* Separator borders between right modules */
+
+
 #cpu,
 #temperature,
 #network,
@@ -120,12 +141,10 @@ window#waybar {
 #backlight,
 #battery,
 #custom-tlp,
-#tray,
-#custom-power {
-    border-left: 1px solid @surface0;
+#tray {
+    border-left: 2px solid @surface0;
 }
- 
-/* Subtle hover on all modules */
+
 #cpu:hover,
 #temperature:hover,
 #network:hover,
@@ -135,26 +154,4 @@ window#waybar {
 #custom-tlp:hover,
 #clock:hover {
     background: @surface0;
-}
- 
-/* Power menu popup */
-menu {
-    background-color: @crust;
-    border: 1px solid @surface0;
-    border-radius: 6px;
-    padding: 4px 0;
-    margin-top: 4px;
-    color: @text;
-}
- 
-menuitem {
-    padding: 6px 16px;
-    color: @text;
-    font-family: "JetBrainsMono Nerd Font", monospace;
-    font-size: 13px;
-}
- 
-menuitem:hover {
-    background-color: @surface0;
-    color: @mauve;
 }
