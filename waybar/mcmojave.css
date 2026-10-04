@@ -1,0 +1,17 @@
+@define-color base #242424;
+@define-color crust #1e1e1e;
+@define-color surface0 #333333;
+
+@define-color text #dedede;
+@define-color dim_text #999999;
+@define-color bright_text #ffffff;
+@define-color overlay0 #8C8C8C;
+
+@define-color accent #2E7CF7;
+@define-color red #ED5F5D;
+@define-color green #79B757;
+@define-color yellow #F3BA4B;
+@define-color magenta #9A57A3;
+@define-color cyan #3484e2;
+@define-color orange #E9873A;
+@define-color pink #E55E9C;
