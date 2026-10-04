@@ -6,8 +6,15 @@ Repository: https://github.com/ThePotDude/debian-dotfiles
 
 ## Screenshots
 
-![Desktop screenshot](screenshots/desktop.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ThePotDude/debian-dotfiles/main/screenshots/desktop.png" alt="Desktop screenshot" width="100%">
+</p>
 
+<!-- Add more screenshots below, e.g.:
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ThePotDude/debian-dotfiles/main/screenshots/fastfetch.png" alt="Terminal with fastfetch" width="100%">
+</p>
+-->
 
 ## Contents
 
