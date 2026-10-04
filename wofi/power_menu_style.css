@@ -1,0 +1,160 @@
+@define-color base #242424;
+@define-color crust #1e1e1e;
+@define-color surface0 #333333;
+
+@define-color text #dedede;
+@define-color dim_text #999999;
+@define-color bright_text #ffffff;
+@define-color overlay0 #8C8C8C;
+
+@define-color accent #2E7CF7;
+@define-color red #ED5F5D;
+@define-color green #79B757;
+@define-color yellow #F3BA4B;
+@define-color magenta #9A57A3;
+@define-color cyan #3484e2;
+@define-color orange #E9873A;
+@define-color pink #E55E9C;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font";
+    font-size: 13.5px;
+    font-weight: 500;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    transition: none;
+}
+
+window {
+    background: @crust;
+    color: @bright_text;
+    border: 2px solid @surface0;
+    padding: 8px;
+}
+
+#outer-box {
+    padding: 0;
+}
+
+#scroll {
+    margin: 0;
+}
+
+#inner-box {
+    padding: 0;
+}
+
+#entry {
+    background: transparent;
+    color: @text;
+    padding: 7px 11px;
+    margin: 1px 0;
+    font-weight: 500;
+}
+
+#entry image {
+    margin-right: 10px;
+    color: @dim_text;
+}
+
+#entry label {
+    color: @text;
+    font-weight: 500;
+}
+
+#entry:hover {
+    background: @surface0;
+    color: @text;
+}
+
+#entry:hover label {
+    color: @text;
+}
+
+#entry:selected {
+    background: @surface0;
+    color: @bright_text;
+    box-shadow: inset 0 -2px 0 @accent;
+}
+
+#entry:selected label {
+    color: @bright_text;
+    font-weight: 600;
+}
+
+#entry:selected image {
+    color: @accent;
+}
+
+#unselected {
+    color: @dim_text;
+    font-weight: 500;
+}
+
+#selected {
+    color: @bright_text;
+    font-weight: 600;
+}
+
+scrollbar {
+    background: transparent;
+    border: none;
+    margin-left: 4px;
+}
+
+scrollbar trough {
+    background: transparent;
+}
+
+scrollbar slider {
+    background: @surface0;
+    min-width: 3px;
+}
+
+scrollbar slider:hover {
+    background: @overlay0;
+}
+
+#entry,
+#entry:selected,
+#entry:focus,
+#entry:selected:focus {
+    outline: none;
+    border: none;
+}
+
+#entry:selected {
+    box-shadow: inset 0 -2px 0 @accent;
+}
+
+#input {
+    background: @base;
+    color: @bright_text;
+
+    border: 1px solid @surface0;
+    border-radius: 0;
+
+    padding: 8px 11px;
+    margin: 0 0 8px 0;
+
+    caret-color: @accent;
+    font-weight: 500;
+
+    outline: none;
+    box-shadow: none;
+}
+
+#input:focus {
+    border: 1px solid @accent;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+}
+
+#input image {
+    color: @overlay0;
+    margin-right: 8px;
+}
