@@ -8,10 +8,6 @@ Repository: https://github.com/ThePotDude/debian-dotfiles
 
 ![Desktop screenshot](screenshots/desktop.png)
 
-<!-- Add more screenshots below, e.g.:
-![Terminal with fastfetch](screenshots/fastfetch.png)
-![Application launcher](screenshots/wofi.png)
--->
 
 ## Contents
 
